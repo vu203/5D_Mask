@@ -93,7 +93,6 @@ for i in range(times):
     mapc_blurred[i, :, :, :] = skimage.filters.gaussian(mapc_sm[i, :, :, :], 2)
 
 new_array2 = (mapc_blurred * 255).astype(np.uint8)
-new_array2.max()
 
 # Calculate Threshold ### USE DIFFERENT THRESHOLDING METHOD IF NECESSARY
 
