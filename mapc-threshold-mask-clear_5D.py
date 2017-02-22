@@ -123,13 +123,11 @@ def multiDilate(binary_input, steps):
 mask_dil = multiDilate(mask, 0)
 
 # Filter the signal channel with the mask:
-    
+    signal_filt = signalc * mask_dil
 
 """ --------------- WRITE A FILTERED FILE ---------------
-Dilate binary mask by a set number of pixels
+Save as image file
 """
-
-signal_filt = signalc * mask_dil
 
 image[:, :, 0, :, :] = signal_filt
 tiff.imsave(output_file, image) # does not preserve metadata!
